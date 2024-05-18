@@ -1,0 +1,287 @@
+/* Gaya dasar untuk elemen .topnav */
+* {
+    margin: auto;
+}
+body {
+    margin: auto;
+}/* Gaya dasar untuk elemen .topnav */
+/* Gaya dasar untuk elemen .topnav */
+/* Gaya dasar untuk elemen .topnav */
+.topnav {
+    background-color: #333; /* Warna latar belakang */
+    overflow: hidden; /* Mengatur elemen agar tidak meluap */
+    padding: 10px 0; /* Padding atas dan bawah */
+}
+
+/* Gaya untuk elemen .isi di dalam .topnav */
+.topnav .isi {
+    display: flex; /* Menggunakan flexbox untuk tata letak horizontal */
+    justify-content: space-between; /* Memberikan jarak yang sama antara elemen */
+    align-items: center; /* Mengatur elemen agar berada di tengah vertikal */
+    padding: 0 20px; /* Padding kiri dan kanan */
+}
+
+/* Gaya untuk elemen .title di dalam .isi */
+.topnav .isi .title {
+    font-size: 20px; /* Ukuran font untuk judul */
+    color: white; /* Warna teks */
+}
+
+/* Gaya untuk tautan di dalam .title */
+.topnav .isi .title a {
+    color: white; /* Warna teks */
+    text-decoration: none; /* Menghilangkan garis bawah pada tautan */
+    font-weight: bold; /* Membuat teks tebal */
+}
+
+/* Gaya untuk elemen .list di dalam .isi */
+.topnav .isi .list {
+    display: flex; /* Menggunakan flexbox untuk tata letak horizontal */
+}
+
+/* Gaya untuk tautan di dalam .list */
+.topnav .isi .list a {
+    color: white; /* Warna teks */
+    text-align: center; /* Perataan teks */
+    padding: 14px 20px; /* Padding pada setiap tautan */
+    text-decoration: none; /* Menghilangkan garis bawah pada tautan */
+    font-size: 17px; /* Ukuran font */
+    transition: background-color 0.3s, color 0.3s; /* Transisi untuk efek hover */
+}
+
+/* Gaya untuk tautan tambahan jika pengguna adalah admin */
+.topnav .isi > a {
+    color: white; /* Warna teks */
+    text-align: center; /* Perataan teks */
+    padding: 14px 20px; /* Padding pada setiap tautan */
+    text-decoration: none; /* Menghilangkan garis bawah pada tautan */
+    font-size: 17px; /* Ukuran font */
+    transition: background-color 0.3s, color 0.3s; /* Transisi untuk efek hover */
+}
+
+/* Gaya khusus untuk tautan LogOut */
+.topnav .isi .list a[href="logout.php"] {
+    background-color: red; /* Warna latar belakang khusus untuk LogOut */
+    color: white; /* Warna teks */
+    border-radius: 4px; /* Menambahkan radius pada sudut */
+}
+
+/* Gaya untuk tautan saat di-hover (kursor di atas tautan) */
+.topnav .isi .list a:hover, .topnav .isi > a:hover {
+    background-color: #ddd; /* Warna latar belakang saat di-hover */
+    color: black; /* Warna teks saat di-hover */
+}
+
+/* Gaya untuk tautan saat LogOut di-hover */
+.topnav .isi .list a[href="logout.php"]:hover {
+    background-color: darkred; /* Warna latar belakang saat di-hover untuk LogOut */
+    color: white; /* Warna teks */
+}
+
+/* Gaya untuk tautan aktif (halaman saat ini) */
+.topnav .isi .list a.active, .topnav .isi > a.active {
+    background-color: #4CAF50; /* Warna latar belakang untuk tautan aktif */
+    color: white; /* Warna teks untuk tautan aktif */
+}
+
+/* Gaya untuk container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Gaya untuk header */
+.header {
+    text-align: center;
+    padding: 50px 0;
+    background-color: #f2f2f2;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 36px;
+}
+
+.header p {
+    margin: 10px 0 0;
+    font-size: 18px;
+    color: #666;
+}
+
+/* Gaya untuk services section */
+.services {
+    padding: 50px 0;
+}
+
+.services h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 28px;
+    color: #333;
+}
+
+.service-item {
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.service-item h3 {
+    margin: 0 0 10px;
+    font-size: 24px;
+    color: #4CAF50;
+}
+
+.service-item p {
+    margin: 0;
+    font-size: 16px;
+    color: #555;
+}
+
+/* Gaya untuk about section */
+.about {
+    padding: 50px 0;
+    background-color: #f2f2f2;
+}
+
+.about h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 28px;
+    color: #333;
+}
+
+.about p {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 18px;
+    color: #666;
+    text-align: center;
+}
+
+/* Gaya untuk footer */
+.footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #333;
+    color: white;
+}
+/* Gaya untuk tabel */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+/* Gaya untuk sel header */
+th {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    text-align: left;
+}
+
+/* Gaya untuk sel data */
+td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Gaya untuk baris ganjil */
+tr:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+
+/* Gaya untuk gambar dalam sel */
+td img {
+    max-width: 100px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Gaya untuk konten */
+.content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+/* Gaya untuk tombol delete */
+button {
+    background-color: #ff4d4d; /* Warna latar belakang */
+    color: #fff; /* Warna teks */
+    border: none; /* Hapus border */
+    padding: 8px 12px; /* Padding */
+    cursor: pointer; /* Ubah kursor menjadi tangan saat dihover */
+    border-radius: 4px; /* Border radius */
+    transition: background-color 0.3s; /* Efek transisi */
+}
+
+button:hover {
+    background-color: #ff6666; /* Warna latar belakang saat dihover */
+}
+/* Gaya untuk tombol Order */
+/* Gaya untuk tombol Order */
+/* Gaya untuk tombol Order */
+.order-button {
+    display: inline-block; /* Menjadikan tombol sebagai elemen blok */
+    background-color: #4CAF50; /* Warna latar belakang */
+    color: white; /* Warna teks */
+    padding: 8px 12px; /* Padding */
+    text-decoration: none; /* Hapus garis bawah */
+    border-radius: 4px; /* Border radius */
+    transition: background-color 0.3s; /* Efek transisi */
+    border: none; /* Hapus border */
+    margin-top: 5px; /* Jarak antara tombol dengan elemen lain */
+}
+
+.order-button:hover {
+    background-color: #45a049; /* Warna latar belakang saat dihover */
+}
+
+/* Gaya untuk tombol Update */
+ .update-button {
+    background-color: #007bff; /* Warna latar belakang */
+    color: #fff; /* Warna teks */
+    border: none; /* Hapus border */
+    padding: 8px 12px; /* Padding */
+    border-radius: 4px; /* Border radius */
+    cursor: pointer; /* Ubah kursor menjadi tangan saat dihover */
+    transition: background-color 0.3s; /* Efek transisi */
+    margin-top: 5px;
+}
+
+ .update-button:hover {
+    background-color: #0056b3; /* Warna latar belakang saat dihover */
+}
+/* Style for footer */
+.footer {
+    position: fixed; /* Fixed position */
+    bottom: 0; /* Align to the bottom */
+    left: 0; /* Align to the left */
+    width: 100%; /* Full width */
+    background-color: #333; /* Background color */
+    color: #fff; /* Text color */
+    text-align: center; /* Center align text */
+    padding: 10px 0; /* Padding */
+}
+
+.add-button {
+    background-color: #007bff; /* Button background color */
+    color: #fff; /* Text color */
+    border: none; /* Remove border */
+    padding: 10px 20px; /* Padding */
+    border-radius: 5px; /* Border radius */
+    cursor: pointer; /* Cursor style */
+    margin-bottom: 20px;
+}
+
+.add-button:hover {
+    background-color: #0056b3; /* Button background color on hover */
+}

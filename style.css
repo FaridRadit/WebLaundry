@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Koh+Santepheap:wght@100;300;400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+*{
+    margin:auto;
+    font-family: "Nunito Sans", sans-serif;
+    
+}
+.koh-santepheap-bold {
+    font-family: "Koh Santepheap", serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  .content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1000px;
+    margin-top: 10%;
+   column-count: 2;
+    box-sizing: border-box;
+    max-width: 100%;
+    height: auto;
+  }
+  .login,.sign {
+    
+    border-radius: 10px;
+    width:400px;
+    height:400px;
+    margin:50px;
+    text-align: center;
+  }
+  .gif {
+    width: 500px;
+    height:500px;
+    margin:50px;
+    
+}
+
+
+.for p {
+ text-align: left;
+ margin-bottom: -20px;
+}
+
+button{
+  margin-top: 20px;
+  width: 100%;
+  margin-right: -5px;
+  background-color:  #120C6E;
+  border: 2px solid  #120C6E;
+  color: white;
+}
+input {
+  width: 100%;
+  padding: 5px;
+}
+
+.butt{
+  width: 100%;
+}
+
+.gif {
+  margin-top: 200px;
+  margin-left: 100px;
+  background:url(gif/monkey-wash-cat.gif) 0 0;
+  background-repeat: no-repeat;
+}
+
+
