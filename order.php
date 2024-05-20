@@ -20,6 +20,7 @@ $result = mysqli_query($connect, $msql);
 if (mysqli_num_rows($result) > 0) {
     $row = mysqli_fetch_array($result);
     $service_name = $row['nama_layanan'];
+    $_SESSION['layanan']=$service_name;
     $price = $row['harga']; // Assuming there is a price column in your layanan table
 } else {
     echo "Service not found";
@@ -57,7 +58,7 @@ if (mysqli_num_rows($result) > 0) {
     <textarea id="address" name="address" rows="4" required></textarea>
 
     <label for="service">Service Name</label>
-    <input type="text" id="service" name="service" value="<?php echo $service_name; ?>" disabled>
+    <input type="text" id="service" name="service" value="<?php echo $service_name; ?>" readonly>
     
     <label for="price">Price (Rp)</label>
     <input type="text" id="price" name="price" value="<?php echo number_format($price, 0, ',', '.'); ?>" readonly>

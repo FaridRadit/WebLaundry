@@ -40,7 +40,9 @@ else {
     <h2>Customer Orders</h2>
     <table>
         <thead>
-            <tr>
+            <tr><?php
+           
+             ?>
                 <th>Order ID</th>
                 <th>Customer Name</th>
                 <th>Order Date</th>
@@ -48,6 +50,9 @@ else {
                 <th>Service</th>
                 <th>Gadget Number</th>
                 <th>Address</th>
+                <th>PickUp-Date</th>
+                <th>Delivery-Date</th>
+        
                 <th>Action</th> <!-- Kolom tambahan untuk tombol delete dan update -->
             </tr>
         </thead>
@@ -55,8 +60,13 @@ else {
             <?php
             $msql = "SELECT * FROM pesanan"; // Table name changed to 'pesanan'
             $result = mysqli_query($connect, $msql);
+           
             if ($result && mysqli_num_rows($result) > 0) {
-                while ($row = mysqli_fetch_assoc($result)) { ?>
+                while ($row = mysqli_fetch_assoc($result)) { 
+                    
+                    ?>
+                    
+               
                     <tr>
                         <td><?= htmlspecialchars($row['order_id']) ?></td>
                         <td><?= htmlspecialchars($row['customer_name']) ?></td>
@@ -64,7 +74,22 @@ else {
                         <td><?= number_format($row['Total_price'], 0, ',', '.') ?></td>
                         <td><?= htmlspecialchars($row['service']) ?></td>
                         <td><?= htmlspecialchars($row['gadget_number']) ?></td>
-                        <td><?= htmlspecialchars($row['Address']) ?></td>
+                        <td><?= htmlspecialchars($row['Address']) ?></td><?php
+                        $order_id=$row['order_id'];
+                        $cus=$row['customer_name'];
+                        $sqll = "SELECT * FROM delivery WHERE order_id='$order_id' AND username='$cus'";
+                        $res = mysqli_query($connect, $sqll);
+                        if ($res && mysqli_num_rows($res)>0){
+                        $baris = mysqli_fetch_assoc($res);?>
+                        <td><?= htmlspecialchars($baris['pickup_date']) ?></td>
+                        <td><?= htmlspecialchars($baris['delivery_date']) ?></td>
+                   <?php } 
+                   else { 
+                    
+                    ?>
+                    <td></td>
+                    <td></td>
+                   <?php } ?>
                         <td>
                         <form action="fill.php?order_id=<?=$row['order_id']?>" method="post">
                                 <!-- Tombol "Order" -->

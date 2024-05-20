@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 18 Bulan Mei 2024 pada 13.29
+-- Waktu pembuatan: 20 Bulan Mei 2024 pada 10.31
 -- Versi server: 10.4.32-MariaDB
 -- Versi PHP: 8.1.25
 
@@ -42,8 +42,9 @@ CREATE TABLE `customer` (
 --
 
 INSERT INTO `customer` (`id`, `name`, `email`, `phone`, `address`, `status`, `service`) VALUES
-(8, 'Farid', 'superfardi20@gmail.c', '081253421765', 'PERUM ,PURI DAMARA B-2 MUNENGA', 'paid', 'Dry Cleaning'),
-(9, 'reed1234', 'Manusiapeyok20@gmail', '081253421765', 'PERUM ,PURI DAMARA B-2 MUNENGA', 'paid', 'Dry Cleaning');
+(43, 'Farid', 'superfardi20@gmail.c', '081253421765', 'PERUM ,PURI DAMARA B-2 MUNENGA', 'paid', 'Dry Cleaning'),
+(44, 'Farid', 'superfardi20@gmail.c', '081253421765', 'PERUM ,PURI DAMARA B-2 MUNENGA', 'paid', 'Basic Wash and Fold'),
+(45, 'Farid', 'superfardi20@gmail.c', '081253421765', 'PERUM ,PURI DAMARA B-2 MUNENGA', 'paid', 'Deluxe Wash and fold');
 
 -- --------------------------------------------------------
 
@@ -64,8 +65,8 @@ CREATE TABLE `delivery` (
 --
 
 INSERT INTO `delivery` (`order_id`, `username`, `order_date`, `pickup_date`, `delivery_date`) VALUES
-(66488, 'Farid', '2024-05-18', '2024-05-19', '2024-05-21'),
-(2147483647, 'reed1234', '2024-05-18', '2024-05-19', '2024-05-20');
+(1524, 'Farid', '2024-05-20', '2024-05-21', '2024-05-23'),
+(7080, 'Farid', '2024-05-20', '2024-05-23', '2024-05-30');
 
 -- --------------------------------------------------------
 
@@ -110,8 +111,9 @@ CREATE TABLE `pesanan` (
 --
 
 INSERT INTO `pesanan` (`order_id`, `customer_name`, `order_date`, `Total_price`, `service`, `gadget_number`, `Address`) VALUES
-(66488, 'Farid', '2024-05-18', 50000, 'Dry Cleaning', '081253421765', 'PERUM ,PURI DAMARA B-2 MUNENGA'),
-(2147483647, 'reed1234', '2024-05-18', 50000, 'Dry Cleaning', '081253421765', 'PERUM ,PURI DAMARA B-2 MUNENGA');
+(1524, 'Farid', '2024-05-20', 50000, 'Dry Cleaning', '081253421765', 'PERUM ,PURI DAMARA B-2 MUNENGA'),
+(6769, 'Farid', '2024-05-20', 35000, 'Deluxe Wash and fold', '081253421765', 'PERUM ,PURI DAMARA B-2 MUNENGA'),
+(7080, 'Farid', '2024-05-20', 25000, 'Basic Wash and Fold', '081253421765', 'PERUM ,PURI DAMARA B-2 MUNENGA');
 
 -- --------------------------------------------------------
 
@@ -176,7 +178,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT untuk tabel `customer`
 --
 ALTER TABLE `customer`
-  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 
 --
 -- AUTO_INCREMENT untuk tabel `delivery`
