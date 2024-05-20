@@ -20,10 +20,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Validate dates
     if ($pickup_date < $order_date || $delivery_date < $order_date) {
-        echo "Error: Pickup date or delivery date cannot be before order date.";
+        echo " <script>alert(Error: Pickup date or delivery date cannot be before order date.)</script>";
+       
         exit;
     }
-
+    $msql="SELECT * FROM delivery WHERE order_id='$order_id'";
+    $process=mysqli_query($connect,$msql);
+    if($process) {
+        echo "<script>
+        alert('This data is already filled');
+        window.location.href = 'customer.php';
+      </script>";
+        exit();
+    }
+else {
     // Insert data into the delivery table
     $insert_query = "INSERT INTO delivery (order_id,username,order_date, pickup_date, delivery_date) VALUES ('$order_id','$username', '$order_date', '$pickup_date', '$delivery_date')";
 
@@ -33,5 +43,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } else {
         echo "Error: " . mysqli_error($connect);
     }
+}
 }
 ?>

@@ -48,6 +48,8 @@ else {
                 <th>Service</th>
                 <th>Gadget Number</th>
                 <th>Address</th>
+                <th>PickUp-Date</th>
+                <th>Delivery-Date</th>
                 <th>Action</th> <!-- Kolom tambahan untuk tombol delete dan update -->
             </tr>
         </thead>
@@ -55,8 +57,12 @@ else {
             <?php
             $msql = "SELECT * FROM pesanan"; // Table name changed to 'pesanan'
             $result = mysqli_query($connect, $msql);
+            $sqll = "SELECT * FROM delivery";
+            $res = mysqli_query($connect, $sqll);
             if ($result && mysqli_num_rows($result) > 0) {
-                while ($row = mysqli_fetch_assoc($result)) { ?>
+                while ($row = mysqli_fetch_assoc($result)) { 
+                    $baris = mysqli_fetch_assoc($res);?>
+               
                     <tr>
                         <td><?= htmlspecialchars($row['order_id']) ?></td>
                         <td><?= htmlspecialchars($row['customer_name']) ?></td>
@@ -65,6 +71,8 @@ else {
                         <td><?= htmlspecialchars($row['service']) ?></td>
                         <td><?= htmlspecialchars($row['gadget_number']) ?></td>
                         <td><?= htmlspecialchars($row['Address']) ?></td>
+                        <td><?= htmlspecialchars($baris['pickup_date']) ?></td>
+                        <td><?= htmlspecialchars($baris['delivery_date']) ?></td>
                         <td>
                         <form action="fill.php?order_id=<?=$row['order_id']?>" method="post">
                                 <!-- Tombol "Order" -->
