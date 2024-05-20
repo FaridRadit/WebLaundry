@@ -52,7 +52,10 @@ else {
                 <th>Address</th>
                 <th>PickUp-Date</th>
                 <th>Delivery-Date</th>
+<<<<<<< HEAD
         
+=======
+>>>>>>> 4e6bd9b659770d3a147cf3743399e3bca61a31d4
                 <th>Action</th> <!-- Kolom tambahan untuk tombol delete dan update -->
             </tr>
         </thead>
@@ -60,12 +63,20 @@ else {
             <?php
             $msql = "SELECT * FROM pesanan"; // Table name changed to 'pesanan'
             $result = mysqli_query($connect, $msql);
+<<<<<<< HEAD
            
             if ($result && mysqli_num_rows($result) > 0) {
                 while ($row = mysqli_fetch_assoc($result)) { 
                     
                     ?>
                     
+=======
+            $sqll = "SELECT * FROM delivery";
+            $res = mysqli_query($connect, $sqll);
+            if ($result && mysqli_num_rows($result) > 0) {
+                while ($row = mysqli_fetch_assoc($result)) { 
+                    $baris = mysqli_fetch_assoc($res);?>
+>>>>>>> 4e6bd9b659770d3a147cf3743399e3bca61a31d4
                
                     <tr>
                         <td><?= htmlspecialchars($row['order_id']) ?></td>
@@ -74,6 +85,7 @@ else {
                         <td><?= number_format($row['Total_price'], 0, ',', '.') ?></td>
                         <td><?= htmlspecialchars($row['service']) ?></td>
                         <td><?= htmlspecialchars($row['gadget_number']) ?></td>
+<<<<<<< HEAD
                         <td><?= htmlspecialchars($row['Address']) ?></td><?php
                         $order_id=$row['order_id'];
                         $cus=$row['customer_name'];
@@ -90,6 +102,11 @@ else {
                     <td></td>
                     <td></td>
                    <?php } ?>
+=======
+                        <td><?= htmlspecialchars($row['Address']) ?></td>
+                        <td><?= htmlspecialchars($baris['pickup_date']) ?></td>
+                        <td><?= htmlspecialchars($baris['delivery_date']) ?></td>
+>>>>>>> 4e6bd9b659770d3a147cf3743399e3bca61a31d4
                         <td>
                         <form action="fill.php?order_id=<?=$row['order_id']?>" method="post">
                                 <!-- Tombol "Order" -->
